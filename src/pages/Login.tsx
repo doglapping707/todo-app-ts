@@ -1,8 +1,13 @@
 function Login() {
     return (
-        <h1 className="text-3xl font-bold underline decoration-pink-500">
-            <h1>Login Page</h1>
-        </h1>
+        <>
+            <button className="btn btn-outline btn-secondary">
+                <i className="fa-solid fa-right-from-bracket"></i>
+            </button>
+            <h1 className="text-3xl font-bold underline decoration-pink-500">
+                <h1>Login Page</h1>
+            </h1>
+        </>
     );
 }
 
