@@ -2,32 +2,52 @@ import {
     BrowserRouter,
     Switch,
     Route,
+    Link
 } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Help from "./pages/Help";
 
 function Router() {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route path="/">
-                    <Home />
-                </Route>
-                <Route path="/login">
-                    <Login />
-                </Route>
-                <Route path="/help">
-                    <Help />
-                </Route>
-            </Switch>
-            <footer>
-                <div className="author-text">
-                    <p>Made with ❤️ by <a href="https://github.com/doglapping707" target="_blank"><b>doglapping707</b></a></p>
-                </div>
-            </footer>
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/about">About</Link>
+                        </li>
+                        <li>
+                            <Link to="/users">Users</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Switch>
+                    <Route path="/about">
+                        <About />
+                    </Route>
+                    <Route path="/users">
+                        <Users />
+                    </Route>
+                    <Route path="/">
+                        <Home />
+                    </Route>
+                </Switch>
+            </div>
         </BrowserRouter>
     );
+}
+
+function Home() {
+    return <h2>Home</h2>;
+}
+
+function About() {
+    return <h2>About</h2>;
+}
+
+function Users() {
+    return <h2>Users</h2>;
 }
 
 export default Router
