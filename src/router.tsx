@@ -3,19 +3,19 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import Lggin from "./pages/Login";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Help from "./pages/Help";
 
 function Router() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/login">
-                    <Lggin />
-                </Route>
                 <Route path="/">
                     <Home />
+                </Route>
+                <Route path="/login">
+                    <Login />
                 </Route>
                 <Route path="/help">
                     <Help />
