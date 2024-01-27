@@ -4,50 +4,39 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Help from "./pages/Help";
 
 function Router() {
     return (
         <BrowserRouter>
-            <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/about">About</Link>
-                        </li>
-                        <li>
-                            <Link to="/users">Users</Link>
-                        </li>
-                    </ul>
-                </nav>
-                <Switch>
-                    <Route path="/about">
-                        <About />
-                    </Route>
-                    <Route path="/users">
-                        <Users />
-                    </Route>
-                    <Route path="/">
-                        <Home />
-                    </Route>
-                </Switch>
-            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/login">Login</Link>
+                    </li>
+                    <li>
+                        <Link to="/help">Help</Link>
+                    </li>
+                </ul>
+            </nav>
+            <Switch>
+                <Route path="/login">
+                    <Login />
+                </Route>
+                <Route path="/help">
+                    <Help />
+                </Route>
+                <Route path="/">
+                    <Home />
+                </Route>
+            </Switch>
         </BrowserRouter>
     );
-}
-
-function Home() {
-    return <h2>Home</h2>;
-}
-
-function About() {
-    return <h2>About</h2>;
-}
-
-function Users() {
-    return <h2>Users</h2>;
 }
 
 export default Router
