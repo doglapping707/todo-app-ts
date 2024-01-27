@@ -1,0 +1,10 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+$fa-font-path: "./styles/vendors/fontawesome-free-6.5.1-web/webfonts";
+@import "./styles/vendors/fontawesome-free-6.5.1-web/scss/fontawesome.scss";
+@import "./styles/vendors/fontawesome-free-6.5.1-web/scss/solid.scss";
+
+// @import "./styles/base/base";
+// @import "./styles/base/typography";
