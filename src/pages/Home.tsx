@@ -2,18 +2,18 @@ function Home() {
     return (
         <>
             <header>
-                <div className="cta_btn__logout">
+                <div className="btn--logout m-4">
                     <div className="tooltip tooltip-left" data-tip="log out">
                         <button className="btn btn-outline btn-primary">
-                            <span className="material-symbols--logout"></span>
+                            <span className="ico--logout"></span>
                         </button>
                     </div>
                 </div>
             </header>
-            {/* <main>
+            <main>
                 <div className="container">
-                    <div className="area_title">
-                        <h1>Todo List</h1>
+                    <div className="area_header">
+                        <h1 className="area_header--title">Todo List</h1>
                     </div>
                     <div className="area_input">
                         <div className="input-section">
@@ -66,7 +66,7 @@ function Home() {
                         </table>
                     </div>
                 </div>
-            </main> */}
+            </main>
         </>
     );
 }

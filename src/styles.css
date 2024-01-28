@@ -1,6 +1,13 @@
+/* abstracts */
+@import url("./styles/abstracts/helpers.css");
+
 /* base */
 @import url("./styles/base/base.css");
 @import url("./styles/base/typography.css");
 
 /* components */
 @import url("./styles/components/buttons.css");
+@import url("./styles/components/icons.css");
+
+/* sections */
+@import url("./styles/sections/home.css");

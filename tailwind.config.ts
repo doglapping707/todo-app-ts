@@ -8,6 +8,10 @@ export default {
   theme: {
     extend: {},
   },
+  corePlugins: {
+    container: false,
+    margin: false,
+  },
   plugins: [require("daisyui")],
   daisyui: {
     themes: ["fantasy"],
