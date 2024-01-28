@@ -2,7 +2,7 @@ function Home() {
     return (
         <>
             <button className="btn btn-outline btn-info">
-                <i className="fa-solid fa-right-from-bracket"></i>
+                LOG OUT
             </button>
             <h1 className="text-3xl font-bold underline decoration-sky-500">
                 <p>Home Page</p>
