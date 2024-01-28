@@ -11,7 +11,7 @@ import Help from "./pages/Help";
 function Router() {
     return (
         <BrowserRouter>
-            <nav>
+            {/* <nav>
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
@@ -23,7 +23,7 @@ function Router() {
                         <Link to="/help">Help</Link>
                     </li>
                 </ul>
-            </nav>
+            </nav> */}
             <Switch>
                 <Route path="/login">
                     <Login />
