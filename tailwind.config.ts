@@ -11,6 +11,8 @@ export default {
   corePlugins: {
     container: false,
     margin: false,
+    width: false,
+    maxWidth: false,
   },
   plugins: [require("daisyui")],
   daisyui: {
