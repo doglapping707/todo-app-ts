@@ -16,27 +16,23 @@ function Home() {
                         <h1 className="area_header--title">Todo List</h1>
                     </div>
                     <div className="area_input">
-                        <div className="input-section">
-                            <input type="text" placeholder="Add a todo . . ." className="input input-bordered input-secondary w-full max-w-xs" />
-                            <input type="date" className="input input-bordered input-secondary w-full max-w-xs" />
-                            <button className="btn btn-secondary">
-                                ADD
-                            </button>
-                        </div>
+                        <input type="text" placeholder="Add a todo . . ." className="input input-bordered input-secondary" />
+                        <input type="date" className="input input-bordered input-secondary" />
+                        <button className="btn btn-secondary"><span className="ico--plus"></span></button>
                     </div>
                     <div className="area_buttos">
-                        <div className="dropdown dropdown-bottom">
-                            <div tabIndex={0} role="button" className="btn m-1">Filter</div>
-                            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <details className="dropdown area_buttons--filterbtn">
+                            <summary className="m-4 btn">FILTER</summary>
+                            <ul className="p-8 shadow menu dropdown-content z-[1] bg-base-100 rounded-box">
                                 <li><a>All</a></li>
                                 <li><a>Pending</a></li>
                                 <li><a>Completed</a></li>
                             </ul>
-                        </div>
-                        <button className="btn btn-secondary">Delete All</button>
+                        </details>
+                        <button className="btn btn-secondary">DELETE ALL</button>
                     </div>
                     <div className="area_list">
-                        <table className="table w-full">
+                        <table className="table">
                             <thead>
                                 <tr>
                                     <th>Task</th>

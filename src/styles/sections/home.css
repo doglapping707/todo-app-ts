@@ -2,3 +2,43 @@
     /* Spacing */
     margin-bottom: 10px;
 }
+
+.area_input {
+    /* Positioning */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Sizing */
+    width: 100%;
+
+    /* Spacing */
+    margin-bottom: 20px;
+}
+
+.area_input input {
+    /* Sizing */
+    width: 100%;
+
+    /* Spacing */
+    margin-right: 10px;
+}
+
+.area_buttos {
+    /* Positoining */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Sizing */
+    width: 100%;
+
+    /* Spacing */
+    margin-bottom: 10px;
+}
+
+.area_buttons--filterbtn {
+    /* Positioning */
+    display: inline-block;
+    position: relative;
+}
