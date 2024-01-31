@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800;900&display=swap');
 
 .area_header--title {
-    /* Font */
     font-size: 30px;
     font-weight: 700;
+}
+
+.table :where(thead) :where(td) {
+    font-size: 14px;
 }
