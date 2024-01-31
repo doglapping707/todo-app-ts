@@ -206,7 +206,7 @@ function Home() {
             </main>
             <footer>
                 <div className="author-text">
-                    <p>Made with ❤️ by <a href="https://github.com/doglapping707" target="_blank"><b>Yuji Tsuboi</b></a></p>
+                    <p>Made with ❤️ by <a href="https://github.com/doglapping707" target="_blank"><b>doglapping707</b></a></p>
                 </div>
             </footer>
         </>
