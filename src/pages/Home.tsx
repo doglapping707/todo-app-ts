@@ -12,18 +12,26 @@ function Home() {
             </header>
             <main>
                 <div className="container">
+
+                    {/* Header Area */}
                     <div className="area_header">
                         <h1 className="area_header--title">Todo List</h1>
                     </div>
+                    {/* /END Header Area */}
+
+                    {/* Input Area */}
                     <div className="area_input">
                         <input type="text" placeholder="Add a todo . . ." className="input input-bordered input-secondary" />
                         <input type="date" className="input input-bordered input-secondary" />
                         <button className="btn btn-secondary"><span className="ico--plus"></span></button>
                     </div>
+                    {/* /END Input Area */}
+
+                    {/* Buttons Area */}
                     <div className="area_buttos">
                         <details className="dropdown area_buttons--filterbtn">
                             <summary className="m-4 btn">FILTER</summary>
-                            <ul className="p-8 shadow menu dropdown-content z-[1] bg-base-100 rounded-box">
+                            <ul className="p-8 shadow menu dropdown-content z-[2] bg-base-100 rounded-box">
                                 <li><a>All</a></li>
                                 <li><a>Pending</a></li>
                                 <li><a>Completed</a></li>
@@ -31,38 +39,176 @@ function Home() {
                         </details>
                         <button className="btn btn-secondary">DELETE ALL</button>
                     </div>
-                    <div className="area_list">
-                        <table className="table">
+                    {/* /END Buttons Area */}
+
+                    {/* List Area */}
+                    <div className="overflow-x-auto area_list">
+                        <table className="table table-pin-rows">
                             <thead>
                                 <tr>
-                                    <th>Task</th>
-                                    <th>Due Date</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
+                                    <td>Task</td>
+                                    <td>Due Date</td>
+                                    <td>Status</td>
+                                    <td>Actions</td>
                                 </tr>
                             </thead>
-                            <tbody className="todos-list-body">
-                                <tr className="todo-item" data-id="${todo.id}">
+                            <tbody>
+                                <tr>
                                     <td>task</td>
                                     <td>2024-01-30</td>
                                     <td>completed</td>
                                     <td>
-                                        <button className="btn btn-warning btn-sm">
-                                            EDIT
+                                        <button className="btn btn-warning btn-sm mr-7">
+                                            <span className="ico--edit"></span>
                                         </button>
-                                        <button className="btn btn-success btn-sm">
-                                            CHECK
+                                        <button className="btn btn-success btn-sm mr-7">
+                                            <span className="ico--check"></span>
                                         </button>
                                         <button className="btn btn-error btn-sm">
-                                            DELETE
+                                            <span className="ico--trash"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>task</td>
+                                    <td>2024-01-30</td>
+                                    <td>completed</td>
+                                    <td>
+                                        <button className="btn btn-warning btn-sm mr-7">
+                                            <span className="ico--edit"></span>
+                                        </button>
+                                        <button className="btn btn-success btn-sm mr-7">
+                                            <span className="ico--check"></span>
+                                        </button>
+                                        <button className="btn btn-error btn-sm">
+                                            <span className="ico--trash"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>task</td>
+                                    <td>2024-01-30</td>
+                                    <td>completed</td>
+                                    <td>
+                                        <button className="btn btn-warning btn-sm mr-7">
+                                            <span className="ico--edit"></span>
+                                        </button>
+                                        <button className="btn btn-success btn-sm mr-7">
+                                            <span className="ico--check"></span>
+                                        </button>
+                                        <button className="btn btn-error btn-sm">
+                                            <span className="ico--trash"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>task</td>
+                                    <td>2024-01-30</td>
+                                    <td>completed</td>
+                                    <td>
+                                        <button className="btn btn-warning btn-sm mr-7">
+                                            <span className="ico--edit"></span>
+                                        </button>
+                                        <button className="btn btn-success btn-sm mr-7">
+                                            <span className="ico--check"></span>
+                                        </button>
+                                        <button className="btn btn-error btn-sm">
+                                            <span className="ico--trash"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>task</td>
+                                    <td>2024-01-30</td>
+                                    <td>completed</td>
+                                    <td>
+                                        <button className="btn btn-warning btn-sm mr-7">
+                                            <span className="ico--edit"></span>
+                                        </button>
+                                        <button className="btn btn-success btn-sm mr-7">
+                                            <span className="ico--check"></span>
+                                        </button>
+                                        <button className="btn btn-error btn-sm">
+                                            <span className="ico--trash"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>task</td>
+                                    <td>2024-01-30</td>
+                                    <td>completed</td>
+                                    <td>
+                                        <button className="btn btn-warning btn-sm mr-7">
+                                            <span className="ico--edit"></span>
+                                        </button>
+                                        <button className="btn btn-success btn-sm mr-7">
+                                            <span className="ico--check"></span>
+                                        </button>
+                                        <button className="btn btn-error btn-sm">
+                                            <span className="ico--trash"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>task</td>
+                                    <td>2024-01-30</td>
+                                    <td>completed</td>
+                                    <td>
+                                        <button className="btn btn-warning btn-sm mr-7">
+                                            <span className="ico--edit"></span>
+                                        </button>
+                                        <button className="btn btn-success btn-sm mr-7">
+                                            <span className="ico--check"></span>
+                                        </button>
+                                        <button className="btn btn-error btn-sm">
+                                            <span className="ico--trash"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>task</td>
+                                    <td>2024-01-30</td>
+                                    <td>completed</td>
+                                    <td>
+                                        <button className="btn btn-warning btn-sm mr-7">
+                                            <span className="ico--edit"></span>
+                                        </button>
+                                        <button className="btn btn-success btn-sm mr-7">
+                                            <span className="ico--check"></span>
+                                        </button>
+                                        <button className="btn btn-error btn-sm">
+                                            <span className="ico--trash"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>task</td>
+                                    <td>2024-01-30</td>
+                                    <td>completed</td>
+                                    <td>
+                                        <button className="btn btn-warning btn-sm mr-7">
+                                            <span className="ico--edit"></span>
+                                        </button>
+                                        <button className="btn btn-success btn-sm mr-7">
+                                            <span className="ico--check"></span>
+                                        </button>
+                                        <button className="btn btn-error btn-sm">
+                                            <span className="ico--trash"></span>
                                         </button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    {/* /END List Area */}
+
                 </div>
             </main>
+            <footer>
+                <div className="author-text">
+                    <p>Made with ❤️ by <a href="https://github.com/doglapping707" target="_blank"><b>Yuji Tsuboi</b></a></p>
+                </div>
+            </footer>
         </>
     );
 }

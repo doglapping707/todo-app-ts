@@ -42,3 +42,28 @@
     display: inline-block;
     position: relative;
 }
+
+.area_list {
+    /* Sizing */
+    width: 100%;
+    height: 300px;
+
+    /* Border */
+    border-radius: 10px;
+}
+
+.author-text {
+    /* Positioning */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    /* Sizing */
+    width: 100%;
+
+    /* Spacing */
+    margin-bottom: 20px;
+}
