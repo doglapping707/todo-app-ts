@@ -5,6 +5,6 @@
     font-weight: 700;
 }
 
-.table :where(thead) :where(td) {
+.table :where(thead) :where(th) {
     font-size: 14px;
 }

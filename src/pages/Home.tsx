@@ -46,10 +46,10 @@ function Home() {
                         <table className="table table-pin-rows">
                             <thead>
                                 <tr>
-                                    <td>Task</td>
-                                    <td>Due Date</td>
-                                    <td>Status</td>
-                                    <td>Actions</td>
+                                    <th>Task</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
