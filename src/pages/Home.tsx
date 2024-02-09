@@ -1,4 +1,31 @@
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+
+type Task = {
+    id: number
+    title: string
+    is_done: boolean
+    created_at: Date
+    updated_at: Date
+}
+
 function Home() {
+    const { data: tasks, status } = useQuery({
+        queryKey: ['tasks'],
+        queryFn: async () => {
+            const { data } = await axios.get<Task[]>(import.meta.env.VITE_API_URL + `/api/tasks`);
+            return data;
+        }
+    });
+
+    if (status == 'pending') {
+        return <div className="loader" />
+    } else if (status == 'error') {
+        return <div className="align-center">Failed to read data.</div>
+    } else if (!tasks || tasks.length <= 0) {
+        return <div className="align-center">There are no registered Todos.</div>
+    }
+
     return (
         <>
             <header>
@@ -53,8 +80,9 @@ function Home() {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>task</td>
+                            { tasks.map(task =>  (
+                                <tr key={task.id}>
+                                    <td>{ task.title.length > 14 ? task.title.slice(0, 14) + "..." : task.title }</td>
                                     <td>2024-01-30</td>
                                     <td>completed</td>
                                     <td>
@@ -69,134 +97,7 @@ function Home() {
                                         </button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>task</td>
-                                    <td>2024-01-30</td>
-                                    <td>completed</td>
-                                    <td>
-                                        <button className="btn btn-warning btn-sm mr-7">
-                                            <span className="ico--edit"></span>
-                                        </button>
-                                        <button className="btn btn-success btn-sm mr-7">
-                                            <span className="ico--check"></span>
-                                        </button>
-                                        <button className="btn btn-error btn-sm">
-                                            <span className="ico--trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>task</td>
-                                    <td>2024-01-30</td>
-                                    <td>completed</td>
-                                    <td>
-                                        <button className="btn btn-warning btn-sm mr-7">
-                                            <span className="ico--edit"></span>
-                                        </button>
-                                        <button className="btn btn-success btn-sm mr-7">
-                                            <span className="ico--check"></span>
-                                        </button>
-                                        <button className="btn btn-error btn-sm">
-                                            <span className="ico--trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>task</td>
-                                    <td>2024-01-30</td>
-                                    <td>completed</td>
-                                    <td>
-                                        <button className="btn btn-warning btn-sm mr-7">
-                                            <span className="ico--edit"></span>
-                                        </button>
-                                        <button className="btn btn-success btn-sm mr-7">
-                                            <span className="ico--check"></span>
-                                        </button>
-                                        <button className="btn btn-error btn-sm">
-                                            <span className="ico--trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>task</td>
-                                    <td>2024-01-30</td>
-                                    <td>completed</td>
-                                    <td>
-                                        <button className="btn btn-warning btn-sm mr-7">
-                                            <span className="ico--edit"></span>
-                                        </button>
-                                        <button className="btn btn-success btn-sm mr-7">
-                                            <span className="ico--check"></span>
-                                        </button>
-                                        <button className="btn btn-error btn-sm">
-                                            <span className="ico--trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>task</td>
-                                    <td>2024-01-30</td>
-                                    <td>completed</td>
-                                    <td>
-                                        <button className="btn btn-warning btn-sm mr-7">
-                                            <span className="ico--edit"></span>
-                                        </button>
-                                        <button className="btn btn-success btn-sm mr-7">
-                                            <span className="ico--check"></span>
-                                        </button>
-                                        <button className="btn btn-error btn-sm">
-                                            <span className="ico--trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>task</td>
-                                    <td>2024-01-30</td>
-                                    <td>completed</td>
-                                    <td>
-                                        <button className="btn btn-warning btn-sm mr-7">
-                                            <span className="ico--edit"></span>
-                                        </button>
-                                        <button className="btn btn-success btn-sm mr-7">
-                                            <span className="ico--check"></span>
-                                        </button>
-                                        <button className="btn btn-error btn-sm">
-                                            <span className="ico--trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>task</td>
-                                    <td>2024-01-30</td>
-                                    <td>completed</td>
-                                    <td>
-                                        <button className="btn btn-warning btn-sm mr-7">
-                                            <span className="ico--edit"></span>
-                                        </button>
-                                        <button className="btn btn-success btn-sm mr-7">
-                                            <span className="ico--check"></span>
-                                        </button>
-                                        <button className="btn btn-error btn-sm">
-                                            <span className="ico--trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>task</td>
-                                    <td>2024-01-30</td>
-                                    <td>completed</td>
-                                    <td>
-                                        <button className="btn btn-warning btn-sm mr-7">
-                                            <span className="ico--edit"></span>
-                                        </button>
-                                        <button className="btn btn-success btn-sm mr-7">
-                                            <span className="ico--check"></span>
-                                        </button>
-                                        <button className="btn btn-error btn-sm">
-                                            <span className="ico--trash"></span>
-                                        </button>
-                                    </td>
-                                </tr>
+                            )) }
                             </tbody>
                         </table>
                     </div>
@@ -213,4 +114,4 @@ function Home() {
     );
 }
 
-export default Home
+export default Home;
