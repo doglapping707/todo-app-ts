@@ -8,6 +8,7 @@
 /* components */
 @import url("./styles/components/buttons.css");
 @import url("./styles/components/icons.css");
+@import url("./styles/components/modals.css");
 
 /* sections */
 @import url("./styles/sections/home.css");
