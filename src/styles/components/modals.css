@@ -1,0 +1,41 @@
+.edit_modal--area_input {
+    /* Spacing */
+    padding: 12px 50px 50px;
+}
+
+.edit_modal--input {
+    /* Reset Css */
+    appearance: none;
+
+    /* Sizing */
+    height: 3rem/* 48px */;
+    flex-shrink: 1;
+
+    /* Spacing */
+    padding-left: 1rem/* 16px */;
+    padding-right: 1rem/* 16px */;
+
+    /* Font */
+    font-size: 0.875rem/* 14px */;
+    font-size: 1rem/* 16px */;
+    line-height: 1.25rem/* 20px */;
+    line-height: 2;
+    line-height: 1.5rem/* 24px */;
+    --tw-bg-opacity: 1;
+
+    /* Color */
+    background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
+
+    /* Border */
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #999;
+    border-radius: var(--rounded-btn, 0.5rem/* 8px */);
+    border-width: 1px;
+    border-color: transparent;
+}
+
+.edit_modal--input-label {
+    /* Font */
+    font-weight: bold;
+}
