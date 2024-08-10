@@ -7,30 +7,31 @@ export default function Home() {
                     <button><span className="ph--plus-light"></span></button>
                 </form>
                 <div>
-                    <h1>Tasks-2</h1>
-                    <ul className="tasks">
-                        <li className="task">
-                            <p>サンプルタスク_1</p>
-                            <div>
-                                <span className="ph--check-light"></span>
-                                <span className="ph--trash-simple"></span>
-                            </div>
-                        </li>
-                        <li className="task">
-                            <p>サンプルタスク_2</p>
-                            <div>
-                                <span className="ph--check-light"></span>
-                                <span className="ph--trash-simple"></span>
-                            </div>
-                        </li>
-                        <li className="task">
-                            <p>サンプルタスク_3</p>
-                            <div>
-                                <span className="ph--check-light"></span>
-                                <span className="ph--trash-simple"></span>
-                            </div>
-                        </li>
-                    </ul>
+                    <h1>Tasks - 3</h1>
+                    <li>
+                        <p>サンプルタスク-1</p>
+                        <div>
+                            <button><span className="lucide--check"></span></button>
+                            <button><span className="mdi--edit"></span></button>
+                            <button><span className="ph--trash-simple"></span></button>
+                        </div>
+                    </li>
+                    <li>
+                        <p>サンプルタスク-2</p>
+                        <div>
+                            <button><span className="lucide--check"></span></button>
+                            <button><span className="mdi--edit"></span></button>
+                            <button><span className="ph--trash-simple"></span></button>
+                        </div>
+                    </li>
+                    <li>
+                        <p>サンプルタスク-3</p>
+                        <div>
+                            <button><span className="lucide--check"></span></button>
+                            <button><span className="mdi--edit"></span></button>
+                            <button><span className="ph--trash-simple"></span></button>
+                        </div>
+                    </li>
                 </div>
             </div>
         </div>

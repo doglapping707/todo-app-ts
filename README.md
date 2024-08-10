@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+## プレビュー
+アカウント登録ページ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ログインページ
 
-Currently, two official plugins are available:
+ホームページ
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+デモサイト: https://todo-app-ts-yv0m.onrender.com
 
-## Expanding the ESLint configuration
+## このアプリについて
+ただいま開発中...
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## インストール・起動方法
 ```
+git clone https://github.com/doglapping707/todo-app-ts
+cd todo-app-ts
+npm install
+npm run dev
+```
+## 参考にしたデザイン
+### アカウント登録 & ログインページ
+[Sign In/ Sign Up Dark UI](https://www.figma.com/community/file/1147581885174632249/sign-in-sign-up-dark-ui?searchSessionId=lt9c4xga-60ipbha0mr8) from Figma
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### ホームページ
+[Todo App by Lucas Viga](https://www.figma.com/community/file/1348652218299666548/todo-app) from Figma
