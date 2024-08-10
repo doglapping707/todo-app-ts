@@ -18,7 +18,7 @@ export default function Register() {
                     </div>
                     <button>Sign up</button>
                 </form>
-                <p>You do have an account?<a href="#">Login</a></p>
+                <p>You do have an account?<a href="#" className="redirect_link">Login</a></p>
             </div>
         </div>
     )
