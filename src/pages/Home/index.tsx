@@ -1,7 +1,9 @@
 import { useTasks } from "../../queries/TaskQuery";
+import { useUpdateDoneTask } from "../../queries/TaskQuery";
 
 export default function Home() {
     const { isPending, isError, data: tasks, error } = useTasks();
+    const updataDoneTask = useUpdateDoneTask();
 
     if (isPending) {
         return <span>Loading...</span>
@@ -23,12 +25,16 @@ export default function Home() {
                     <ul>
                         {tasks.map(task => (
                             <li key={task.id}>
-                                <p>{task.title}</p>
-                                <div>
-                                    <button><span className="lucide--check"></span></button>
-                                    <button><span className="mdi--edit"></span></button>
-                                    <button><span className="ph--trash-simple"></span></button>
-                                </div>
+                                <p className={task.is_done ? 'done' : ''}>{task.title}</p>
+                                {task.is_done ? (
+                                    <button onClick={() => {updataDoneTask.mutate(task)}}><span className="icon-park-outline--return"></span></button>
+                                ) : (
+                                    <div>
+                                        <button onClick={() => {updataDoneTask.mutate(task)}}><span className="lucide--check"></span></button>
+                                        <button><span className="mdi--edit"></span></button>
+                                        <button><span className="ph--trash-simple"></span></button>
+                                    </div>
+                                )}
                             </li>
                         ))}
                     </ul>
