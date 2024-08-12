@@ -1,9 +1,17 @@
-import { useTasks } from "../../queries/TaskQuery";
-import { useUpdateDoneTask } from "../../queries/TaskQuery";
+import { useState } from "react";
+import { useTasks, useUpdateDoneTask, useCreateTask } from "../../queries/TaskQuery";
 
 export default function Home() {
     const { isPending, isError, data: tasks, error } = useTasks();
     const updataDoneTask = useUpdateDoneTask();
+    const createTask = useCreateTask();
+
+    const [title, setTitle] = useState('')
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        createTask.mutate(title)
+        setTitle('')
+    }
 
     if (isPending) {
         return <span>Loading...</span>
@@ -14,8 +22,8 @@ export default function Home() {
     return (
         <div id="home">
             <div className="container">
-                <form action="">
-                    <input type="text" placeholder="Add a new task" />
+                <form action="" onSubmit={handleSubmit}>
+                    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Add a new task" />
                     <button><span className="ph--plus-light"></span></button>
                 </form>
                 <div>
