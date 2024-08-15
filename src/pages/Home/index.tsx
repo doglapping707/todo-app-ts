@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTasks, useUpdateDoneTask, useCreateTask } from "../../queries/TaskQuery";
-import EditButton from "./components/EditButton";
+import EditModal from "./components/EditModal";
+import useMakeString from  "../../hook/MakeString"
 
 export default function Home() {
     const { isPending, isError, data: tasks, error } = useTasks();
@@ -34,13 +35,13 @@ export default function Home() {
                     <ul>
                         {tasks.map(task => (
                             <li key={task.id}>
-                                <p className={task.is_done ? 'done' : ''}>{task.title}</p>
+                                <p className={task.is_done ? 'done' : ''}>{useMakeString(task.title, 20)}</p>
                                 {task.is_done ? (
                                     <button onClick={() => { updataDoneTask.mutate(task) }}><span className="icon-park-outline--return"></span></button>
                                 ) : (
                                     <div>
                                         <button onClick={() => { updataDoneTask.mutate(task) }}><span className="lucide--check"></span></button>
-                                        <EditButton {...task}/>
+                                        <EditModal {...task}/>
                                         <button><span className="ph--trash-simple"></span></button>
                                     </div>
                                 )}
