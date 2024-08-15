@@ -17,6 +17,13 @@ cd todo-app-ts
 npm install
 npm run dev
 ```
+
+## .envの作成
+`.env.local`を作成し、下記をコピーしてください。
+```
+VITE_API_URL='http://127.0.0.1:8080'
+```
+
 ## 参考にしたデザイン
 ### アカウント登録 & ログインページ
 [Sign In/ Sign Up Dark UI](https://www.figma.com/community/file/1147581885174632249/sign-in-sign-up-dark-ui?searchSessionId=lt9c4xga-60ipbha0mr8) from Figma

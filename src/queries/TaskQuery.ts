@@ -33,7 +33,7 @@ function useCreateTask() {
             queryClient.invalidateQueries({
                 queryKey: ['tasks']
             })
-            toast.success("新規登録に成功しました。")
+            toast.success("タスク登録に成功しました。")
         },
         onError: async (error: AxiosError) => {
             const data: any = error.response?.data
@@ -46,7 +46,7 @@ function useCreateTask() {
                     }
                 )
             } else {
-                toast.error("新規登録に失敗しました。")
+                toast.error("タスク登録に失敗しました。")
             }
         }
     });
