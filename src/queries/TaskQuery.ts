@@ -52,8 +52,53 @@ function useCreateTask() {
     });
 }
 
+function useUpdateTask() {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: api.updateTask,
+        onSuccess: async () => {
+            queryClient.invalidateQueries({
+                queryKey: ['tasks']
+            })
+            toast.success("タスク更新に成功しました。")
+        },
+        onError: async (error: AxiosError) => {
+            const data: any = error.response?.data
+            if (data.errors) {
+                Object.values(data.errors).map(
+                    (messages: any) => {
+                        messages.map((message: string) => {
+                            toast.error(message)
+                        })
+                    }
+                )
+            } else {
+                toast.error("タスク更新に失敗しました。")
+            }
+        }
+    });
+}
+
+function useDeleteTask() {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: api.deleteTask,
+        onSuccess: async () => {
+            queryClient.invalidateQueries({
+                queryKey: ['tasks']
+            })
+            toast.success("タスク削除に成功しました。")
+        },
+        onError: async () => {
+            toast.error("タスク削除に失敗しました。")
+        }
+    });
+}
+
 export {
     useTasks,
     useUpdateDoneTask,
-    useCreateTask
+    useCreateTask,
+    useUpdateTask,
+    useDeleteTask
 }

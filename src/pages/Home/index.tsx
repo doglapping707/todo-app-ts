@@ -1,20 +1,22 @@
 import { useState } from "react";
-import { useTasks, useUpdateDoneTask, useCreateTask } from "../../queries/TaskQuery";
+import { useTasks, useUpdateDoneTask, useCreateTask, useDeleteTask } from "../../queries/TaskQuery";
 import EditModal from "./components/EditModal";
-import useMakeString from  "../../hook/MakeString"
+import useMakeString from "../../hook/MakeString"
 
 export default function Home() {
-    const { isPending, isError, data: tasks, error } = useTasks();
-    const updataDoneTask = useUpdateDoneTask();
-    const createTask = useCreateTask();
-
     const [title, setTitle] = useState('')
+    const createTask = useCreateTask();
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         createTask.mutate(title)
         setTitle('')
     }
 
+    const updataDoneTask = useUpdateDoneTask();
+
+    const deleteTask = useDeleteTask();
+
+    const { isPending, isError, data: tasks, error } = useTasks();
     if (isPending) {
         return <span>Loading...</span>
     } else if (isError) {
@@ -41,8 +43,8 @@ export default function Home() {
                                 ) : (
                                     <div>
                                         <button onClick={() => { updataDoneTask.mutate(task) }}><span className="lucide--check"></span></button>
-                                        <EditModal {...task}/>
-                                        <button><span className="ph--trash-simple"></span></button>
+                                        <EditModal {...task} />
+                                        <button onClick={() => { deleteTask.mutate(task.id) }}><span className="ph--trash-simple"></span></button>
                                     </div>
                                 )}
                             </li>
