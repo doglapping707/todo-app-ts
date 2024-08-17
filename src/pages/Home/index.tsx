@@ -1,19 +1,17 @@
 import { useState } from "react";
 import { useTasks, useUpdateDoneTask, useCreateTask, useDeleteTask } from "../../queries/TaskQuery";
 import EditModal from "./components/EditModal";
-import useMakeString from "../../hook/MakeString"
+import useMakeString from "../../hooks/MakeString";
 
 export default function Home() {
-    const [title, setTitle] = useState('')
+    const [title, setTitle] = useState('');
     const createTask = useCreateTask();
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        createTask.mutate(title)
-        setTitle('')
+        e.preventDefault();
+        createTask.mutate(title);
+        setTitle('');
     }
-
     const updataDoneTask = useUpdateDoneTask();
-
     const deleteTask = useDeleteTask();
 
     const { isPending, isError, data: tasks, error } = useTasks();
