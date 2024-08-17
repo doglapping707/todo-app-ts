@@ -21,7 +21,7 @@ npm run dev
 ## .envの作成
 `.env.local`を作成し、下記をコピーしてください。
 ```
-VITE_API_URL='http://127.0.0.1:8080'
+VITE_API_URL={使用するタスクAPIのURL}
 ```
 
 ## 参考にしたデザイン
