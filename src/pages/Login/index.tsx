@@ -19,6 +19,7 @@ export default function Login() {
     });
 
     useEffect(() => {
+        http.get('sanctum/csrf-cookie');
         http.post('api/login', {
             email: 'admin@example.com',
             password: '123456789',
