@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { useLogout } from "../../queries/AuthQuery";
 import { useTasks, useUpdateDoneTask, useCreateTask, useDeleteTask } from "../../queries/TaskQuery";
 import EditModal from "./components/EditModal";
 import useMakeString from "../../hooks/MakeString";
 
 export default function Home() {
+    const logout = useLogout();
     const [title, setTitle] = useState('');
     const createTask = useCreateTask();
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         createTask.mutate(title);
         setTitle('');
@@ -23,6 +25,7 @@ export default function Home() {
 
     return (
         <div id="home">
+            <button className="logout_btn" onClick={() => logout.mutate()}><span className="ic--round-logout"></span></button>
             <div className="container">
                 <form action="" className="add_form" onSubmit={handleSubmit}>
                     <input type="text" className="add_input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Add a new task" />
