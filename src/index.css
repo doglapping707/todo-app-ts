@@ -284,10 +284,6 @@ li{
 #home .add_btn:hover {
   background-color: var(--secondary_color);
 }
-#home button span {
-  width: 22px;
-  height: 22px;
-}
 #home .task_qty {
   color: var(--text_color--white);
   font-size: 19px;

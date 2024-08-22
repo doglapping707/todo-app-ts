@@ -1,8 +1,7 @@
-// import { useContext } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import * as api from "../api/AuthAPI";
 import { toast } from "react-toastify";
-// import { AuthContext } from "../hooks/AuthContext";
+import { useAuth } from "../hooks/AuthContext";
 
 function useUser() {
     return useQuery({
@@ -12,13 +11,12 @@ function useUser() {
 }
 
 function useLogin() {
-    // const useAuth = useContext(AuthContext);
+    const { setIsAuth } = useAuth();
     return useMutation({
         mutationFn: api.login,
         onSuccess: async (user) => {
             if (user) {
-                // useAuth.setIsAuth(true);
-                console.log(user);
+                setIsAuth(true);
             }
         },
         onError: async () => {
@@ -28,14 +26,13 @@ function useLogin() {
 }
 
 function useLogout() {
-    // const useAuth = useContext(AuthContext);
+    const { setIsAuth } = useAuth();
     return useMutation({
         mutationFn: api.logout,
         onSuccess: async (user) => {
-            // if (user) {
-            //     useAuth.setIsAuth(false);
-            // }
-            console.log(user);
+            if (user) {
+                setIsAuth(false);
+            }
         },
         onError: async () => {
             toast.error("ログアウトに失敗しました。");
