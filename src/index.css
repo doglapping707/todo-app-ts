@@ -395,3 +395,18 @@ li{
   transform: scale(0.9);
   transition: all 0.2s;
 }
+
+/***************
+エラー画面
+***************/
+#error {
+  height: 100vh;
+  color: var(--text_color--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#error h1 {
+  margin-bottom: 16px;
+}
