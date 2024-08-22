@@ -1,5 +1,8 @@
 export default function Error() {
     return (
-        <h1>Error page</h1>
+        <div id="error">
+            <h1>404 NotFound</h1>
+            <p>お探しのページは見つかりませんでした。</p>
+        </div>
     )
 }
