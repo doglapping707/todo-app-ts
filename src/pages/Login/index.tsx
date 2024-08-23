@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useLogin } from "../../queries/AuthQuery";
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function Login() {
+    const queryClient = useQueryClient();
+    queryClient.removeQueries();
+
     const login = useLogin();
     const [email, setEmail] = useState('admin@example.com');
     const [password, setPassword] = useState('123456789');
