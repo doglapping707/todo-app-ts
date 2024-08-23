@@ -1,4 +1,4 @@
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import * as api from "../api/AuthAPI";
 import { toast } from "react-toastify";
 import { useAuth } from "../hooks/AuthContext";
@@ -27,10 +27,12 @@ function useLogin() {
 
 function useLogout() {
     const { setIsAuth } = useAuth();
+    const queryClient = useQueryClient();
     return useMutation({
         mutationFn: api.logout,
         onSuccess: async (user) => {
             if (user) {
+                queryClient.removeQueries({queryKey: ['tasks']});
                 setIsAuth(false);
             }
         },
