@@ -20,7 +20,7 @@ function useUpdateDoneTask() {
             })
         },
         onError: async () => {
-            toast.error("ステータス更新に失敗しました。")
+            toast.error("ステータス更新に失敗しました。");
         }
     });
 }
@@ -32,21 +32,21 @@ function useCreateTask() {
         onSuccess: async () => {
             queryClient.invalidateQueries({
                 queryKey: ['tasks']
-            })
-            toast.success("タスク登録に成功しました。")
+            });
+            toast.success("タスク登録に成功しました。");
         },
         onError: async (error: AxiosError) => {
-            const data: any = error.response?.data
+            const data: any = error.response?.data;
             if (data.errors) {
                 Object.values(data.errors).map(
                     (messages: any) => {
                         messages.map((message: string) => {
-                            toast.error(message)
-                        })
+                            toast.error(message);
+                        });
                     }
-                )
+                );
             } else {
-                toast.error("タスク登録に失敗しました。")
+                toast.error("タスク登録に失敗しました。");
             }
         }
     });

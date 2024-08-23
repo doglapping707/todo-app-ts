@@ -6,11 +6,11 @@ import { CSSTransition } from "react-transition-group";
 export default function EditModal(task: Task) {
     const [show, setShow] = useState(false);
 
-    const [editTitle, setEditTitle] = useState(task.title)
-    const updateTask = useUpdateTask()
+    const [editTitle, setEditTitle] = useState(task.title);
+    const updateTask = useUpdateTask();
     function handleUpdate(e: React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLFormElement>) {
-        e.preventDefault()
-        const newTask = { ...task }
+        e.preventDefault();
+        const newTask = { ...task };
         newTask.title = editTitle;
         updateTask.mutate({
             id: task.id,
@@ -19,10 +19,10 @@ export default function EditModal(task: Task) {
             onSuccess: () => {
                 setShow(false)
             },
-        })
+        });
     }
 
-    const nodeRef = useRef(null)
+    const nodeRef = useRef(null);
     function openModal() {
         setShow(true);
     }
