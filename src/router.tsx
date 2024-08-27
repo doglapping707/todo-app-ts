@@ -21,6 +21,11 @@ export default function Router() {
         return <Home />
     }
 
+    function RegisterRoute() {
+        if (isAuth) return <Navigate replace to="/" />
+        return <Register />
+    }
+
     function LoginRoute() {
         if (isAuth) return <Navigate replace to="/" />
         return <Login />
@@ -31,7 +36,7 @@ export default function Router() {
     const router = createBrowserRouter([
         {
             path: "/register",
-            element: <Register />,
+            element: <RegisterRoute />,
             errorElement: <Error />,
         },
         {
