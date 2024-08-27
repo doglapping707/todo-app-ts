@@ -43,13 +43,13 @@ export default function EditModal(task: Task) {
             >
                 <div className="overlay" ref={nodeRef}>
                     <div className="modal">
-                        <h1>Update Task</h1>
+                        <h1>タスク編集</h1>
                         <form onSubmit={handleUpdate}>
-                            <input type="text" className="update_input" defaultValue={editTitle} onChange={(e) => setEditTitle(e.target.value)} placeholder="Input a task title" />
+                            <input type="text" className="update_input" defaultValue={editTitle} onChange={(e) => setEditTitle(e.target.value)} placeholder="タイトルを入力してください" />
                         </form>
                         <div className="button_area">
-                            <button className="cancel_btn" onClick={closeModal}>Cancelar</button>
-                            <button className="update_btn" onClick={handleUpdate}>Salvar</button>
+                            <button className="cancel_btn" onClick={closeModal}>閉じる</button>
+                            <button className="update_btn" onClick={handleUpdate}>更新</button>
                         </div>
                     </div>
                 </div>

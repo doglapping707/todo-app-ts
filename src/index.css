@@ -145,7 +145,7 @@ li{
 }
 
 /***************
-登録・ログイン画面
+アカウント登録・ログイン画面
 ***************/
 #form {
   display: flex;
@@ -329,7 +329,7 @@ li{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
   z-index: 1;
 }
 #home .modal {
@@ -342,7 +342,7 @@ li{
 }
 #home .modal h1 {
   color: var(--text_color--white);
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 900;
   margin-bottom: 32px;
 }

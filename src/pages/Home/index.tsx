@@ -28,12 +28,12 @@ export default function Home() {
             <button className="logout_btn" onClick={() => logout.mutate()}><span className="ic--round-logout"></span></button>
             <div className="container">
                 <form action="" className="add_form" onSubmit={handleSubmit}>
-                    <input type="text" className="add_input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Add a new task" />
+                    <input type="text" className="add_input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="タイトルを入力してください" />
                     <button className="add_btn"><span className="ph--plus-light"></span></button>
                 </form>
                 <div>
                     {tasks.length > 0 ? (
-                        <h1 className="task_qty">Tasks - {tasks.length}</h1>
+                        <h1 className="task_qty">タスク - {tasks.length}</h1>
                     ) : ''}
                     <ul>
                         {tasks.map(task => (
