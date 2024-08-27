@@ -4,7 +4,7 @@ import { useLogin } from "../../queries/AuthQuery";
 export default function Login() {
     const login = useLogin();
     const [email, setEmail] = useState('admin@example.com');
-    const [password, setPassword] = useState('123456789');
+    const [password, setPassword] = useState('Asdf1234');
     function handleLogin(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         login.mutate({ email, password });
@@ -13,20 +13,20 @@ export default function Login() {
     return (
         <div id="form">
             <div className="container">
-                <h1>Login</h1>
+                <h1>ログイン</h1>
                 <form onSubmit={handleLogin}>
                     <div className="input_area">
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email">メールアドレス</label>
                         <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
                     <div className="input_area">
-                        <label htmlFor="password">Pawssword</label>
+                        <label htmlFor="password">パスワード</label>
                         <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
-                    <a href="#">Forgot your password?</a>
-                    <button>Sign in</button>
+                    <a href="#">パスワードを忘れた方はこちら</a>
+                    <button>サインイン</button>
                 </form>
-                <p>You don't have an account?<a href="#" className="redirect_link">Register</a></p>
+                <p>アカウントをお持ちではないですか？<a href="/register" className="redirect_link">アカウント登録</a></p>
             </div>
         </div>
     )
