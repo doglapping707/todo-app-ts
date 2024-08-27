@@ -6,6 +6,11 @@ async function getUser() {
     return data;
 }
 
+async function register({ name, email, password }: { name: string, email: string, password: string }) {
+    const { data } = await useCreateAxios().post<User>(`api/register`, { name, email, password });
+    return data;
+}
+
 async function login({ email, password }: { email: string, password: string }) {
     await useCreateAxios().get('sanctum/csrf-cookie');
     const { data } = await useCreateAxios().post<User>(`api/login`, { email, password });
@@ -19,6 +24,7 @@ async function logout() {
 
 export {
     getUser,
+    register,
     login,
     logout
 }

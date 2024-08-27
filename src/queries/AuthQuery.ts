@@ -11,6 +11,29 @@ function useUser() {
     });
 }
 
+function useRegister() {
+    return useMutation({
+        mutationFn: api.register,
+        onSuccess: async () => {
+            toast.success("アカウント登録に成功しました。");
+        },
+        onError: async (error: AxiosError) => {
+            const data: any = error.response?.data;
+            if (data.errors) {
+                Object.values(data.errors).map(
+                    (messages: any) => {
+                        messages.map((message: string) => {
+                            toast.error(message);
+                        });
+                    }
+                );
+            } else {
+                toast.error("アカウント登録に失敗しました。");
+            }
+        }
+    });
+}
+
 function useLogin() {
     const { setIsAuth } = useAuth();
     return useMutation({
@@ -56,6 +79,7 @@ function useLogout() {
 
 export {
     useUser,
+    useRegister,
     useLogin,
     useLogout
 }
