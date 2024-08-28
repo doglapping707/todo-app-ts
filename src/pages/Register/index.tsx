@@ -4,9 +4,9 @@ import { useRegister, useLogin } from "../../queries/AuthQuery";
 export default function Register() {
     const register = useRegister();
     const login = useLogin();
-    const [name, setName] = useState('sato');
-    const [email, setEmail] = useState('sato@example.com');
-    const [password, setPassword] = useState('Asdf1234');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     function handleRegister(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         register.mutate({ name, email, password }, {
