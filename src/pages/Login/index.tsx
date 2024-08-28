@@ -3,8 +3,8 @@ import { useLogin } from "../../queries/AuthQuery";
 
 export default function Login() {
     const login = useLogin();
-    const [email, setEmail] = useState('admin@example.com');
-    const [password, setPassword] = useState('Asdf1234');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     function handleLogin(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         login.mutate({ email, password });
