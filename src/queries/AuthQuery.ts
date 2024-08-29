@@ -54,6 +54,7 @@ function useLogin() {
                     }
                 );
             } else {
+                console.log(1);
                 console.log(error);
                 toast.error("ユーザー名またはパスワードに誤りがあります。");
             }
